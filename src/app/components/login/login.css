@@ -1,0 +1,89 @@
+/* Estilos generales para el contenedor */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+}
+
+
+
+.login-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+}
+.login-box:hover{
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    scale: 1.05;
+    transition:  0.3s ease;
+    cursor: pointer;
+}
+
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.textbox {
+  margin: 15px 0;
+  position: relative;
+}
+
+.textbox input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 18px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.textbox input:focus {
+  border-color: #4CAF50;
+  transform: translateY(-6px);
+  box-shadow: 0 4px 6px rgba(72, 163, 72, 0.4);
+}
+
+
+.textbox input:focus::placeholder {
+  color: transparent;
+}
+
+.textbox input::placeholder {
+  color: #888;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.btn-submit:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(72, 163, 72, 0.3);
+}
