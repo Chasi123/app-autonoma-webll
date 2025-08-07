@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../components/interface/interfaceUsuarios';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/users';
-  private loggedIn = false;
+   private apiUrl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string) {
-    return this.http.get<any[]>(`${this.apiUrl}?username=${username}&password=${password}`);
+  
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
   }
 
-  setLoggedIn(value: boolean) {
-    this.loggedIn = value;
+  
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl);
   }
 
-  isLoggedIn() {
-    return this.loggedIn;
+  
+  getUserByEmail(email: string): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}?email=${email}`);
   }
 }

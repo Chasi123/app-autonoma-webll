@@ -1,18 +1,15 @@
 <div class="registro-container">
   <div class="registro-box">
     <h2>Registro</h2>
-    <form>
+    <form (ngSubmit)="registrarUsuario()" #form="ngForm">
       <div class="textbox">
-        <input type="text" placeholder="Nombre de Usuario" required />
+        <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Nombre de Usuario" required />
       </div>
       <div class="textbox">
-        <input type="email" placeholder="Correo Electrónico" required />
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Correo Electrónico" required />
       </div>
       <div class="textbox">
-        <input type="password" placeholder="Contraseña" required />
-      </div>
-      <div class="textbox">
-        <input type="password" placeholder="Confirmar Contraseña" required />
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required />
       </div>
       <input type="submit" value="Registrar" class="btn-submit" />
     </form>
