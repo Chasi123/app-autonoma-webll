@@ -3,13 +3,17 @@
     <h2>Iniciar Sesión</h2>
     <form (ngSubmit)="loginUsuario()" #loginForm="ngForm">
       <div class="textbox">
-        <input   name="email" [(ngModel)]="email" id="email" type="text" placeholder="Email" required />
+        <input name="email" [(ngModel)]="email" id="email" type="text" placeholder="Email" required />
       </div>
       <div class="textbox">
-        <input  name="password" [(ngModel)]="password" id="password" type="password" placeholder="Contraseña" required />
+        <input name="password" [(ngModel)]="password" id="password" type="password" placeholder="Contraseña" required />
       </div>
       <input type="submit" value="Ingresar" class="btn-submit" />
     </form>
-    
+
+    <!-- Mostrar error si existe -->
+    <div class="error" *ngIf="errror">
+      {{ errror }}
+    </div>
   </div>
 </div>
