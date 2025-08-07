@@ -12,10 +12,8 @@
     </form>
 
    
-    @if (errror) {
-    <div class="error">
-        {{errror}}
+    <div class="error" *ngIf="errror">
+      {{ errror }}
     </div>
-    }
   </div>
 </div>
